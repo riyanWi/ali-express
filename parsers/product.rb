@@ -26,7 +26,7 @@ end
 
 originalprice_elem = html.css('div.product-price-original')
 originalprice_elem = html.css('span.uniform-banner-box-discounts') if originalprice_elem.empty?
-
+originalprice_elem = html.css('div.product-price-current') if originalprice_elem.empty?
 
 
 if originalprice_elem

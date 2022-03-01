@@ -56,7 +56,7 @@ reviews_count = html.at_css('.product-reviewer-reviews')&.text
 product['rating'] = rating.to_f if rating
 product['reviews_count'] = reviews_count.to_f if reviews_count
 
-product['ship_info'] = html.at_css('.product-shipping-price')&.text.strip
+product['ship_info'] = html.at_css('.product-shipping-price')&.text
 
 return_policy = html.css('.buyer-pretection-info[2] .buyer-pretection-context')
 product['return_policy'] = return_policy.text.strip if return_policy

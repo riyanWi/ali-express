@@ -1,4 +1,4 @@
 exporter_name: product_json
 exporter_type: json
-collection: product
+collection: products
 write_mode: pretty_array

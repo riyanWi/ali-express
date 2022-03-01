@@ -1,10 +1,8 @@
 nokogiri = Nokogiri.HTML(content)
 
-p nokogiri
+# p nokogiri
 
-products = nokogiri.css("div.JIIxO")
-
-# p products
+products = nokogiri.css("div.product-container div.JIIxO a._3t7zg")
 
 products.each do |product|
     
@@ -24,10 +22,10 @@ products.each do |product|
    
 end
 
-total_page_summary = nokogiri.css(".total-page").text
-total_page = total_page_summary.scan(/\d+/).first.to_i
+# total_page_summary = nokogiri.css(".total-page").text
+# total_page = total_page_summary.scan(/\d+/).first.to_i
 
-2.upto(total_page) do |i|
+2.upto(10) do |i|
     if i < 11
         url = "https://www.aliexpress.com/category/100003109/women-clothing.html?page=#{i}"
         pages << {

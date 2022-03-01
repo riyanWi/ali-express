@@ -1,6 +1,6 @@
 html = Nokogiri.HTML(content)
 
-products = html.css("div.product-container div.JIIxO")
+products = html.css("div.product-container div.JIIxO a")
 
 products.each do |product|
     a_element = product.at_css('a')

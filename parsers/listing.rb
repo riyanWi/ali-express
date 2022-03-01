@@ -1,11 +1,17 @@
-html = Nokogiri.HTML(content)
+nokogiri = Nokogiri.HTML(content)
 
-products = html.css("div.product-container div.JIIxO a._3t7zg")
+p nokogiri
+
+products = nokogiri.css("div.JIIxO")
+
+# p products
 
 products.each do |product|
     
     url = URI.join('https://www.aliexpress.com',product['href']).to_s.split('?').first
-
+    
+    puts url
+    
     pages << {
         url: url,
         page_type: "product",
@@ -18,7 +24,7 @@ products.each do |product|
    
 end
 
-total_page_summary = html.css(".total-page").text
+total_page_summary = nokogiri.css(".total-page").text
 total_page = total_page_summary.scan(/\d+/).first.to_i
 
 2.upto(total_page) do |i|

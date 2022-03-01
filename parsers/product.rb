@@ -15,6 +15,7 @@ image_url = html.at_css('.images-view-item img')
 product['image_url'] = image_url['src']
 
 discount_elem = html.css('div.product-price-current')
+discount_elem = html.css('span.uniform-banner-box-price') if discount_elem.empty?
 
 if discount_elem
     pricestring = discount_elem.text
@@ -24,14 +25,15 @@ if discount_elem
 end
 
 originalprice_elem = html.css('div.product-price-original')
+originalprice_elem = html.css('span.uniform-banner-box-discounts') if originalprice_elem.empty?
+
+
 
 if originalprice_elem
     valueprice = originalprice_elem.css('div.product-price-del')
-    if valueprice
-        pricestring = valueprice.text
-    else
-        pricestring = originalprice_elem.text
-    end
+   
+    pricestring = valueprice.empty? || valueprice.nil? ? originalprice_elem.text : valueprice.text
+
     price = pricestring.scan(/(\d+\.\d+)/)
     product['original_low_price'] = price.first[0].to_f
     product['original_high_price'] = price.last[0].to_f

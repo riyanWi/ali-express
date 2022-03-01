@@ -2,4 +2,3 @@ exporter_name: product_json
 exporter_type: json
 collection: product
 write_mode: pretty_array
-order: desc

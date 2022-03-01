@@ -50,8 +50,8 @@ if size_elem
     product['size'] = size
 end
 
-rating = html.at_css('.overview-rating-average')&.text.strip
-reviews_count = html.at_css('.product-reviewer-reviews')&.text.strip
+rating = html.at_css('.overview-rating-average')&.text
+reviews_count = html.at_css('.product-reviewer-reviews')&.text
 
 product['rating'] = rating.to_f if rating
 product['reviews_count'] = reviews_count.to_f if reviews_count

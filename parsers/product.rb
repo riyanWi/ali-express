@@ -61,7 +61,7 @@ product['ship_info'] = html.at_css('.product-shipping-price')&.text
 return_policy = html.css('.buyer-pretection-info[2] .buyer-pretection-context')
 product['return_policy'] = return_policy.text.strip if return_policy
 
-product['guarantee'] = html.at_css('.buyer-pretection-context')&.text.strip
+product['guarantee'] = html.at_css('.buyer-pretection-context')&.text
 
 product['_collection'] = "products"
 

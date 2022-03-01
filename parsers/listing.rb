@@ -1,11 +1,10 @@
 html = Nokogiri.HTML(content)
 
-products = html.css("div.product-container div.JIIxO a")
+products = html.css("div.product-container div.JIIxO a._3t7zg")
 
 products.each do |product|
-    a_element = product.at_css('a')
     
-    url = URI.join('https://www.aliexpress.com',a_element['href']).to_s.split('?').first
+    url = URI.join('https://www.aliexpress.com',product['href']).to_s.split('?').first
 
     pages << {
         url: url,

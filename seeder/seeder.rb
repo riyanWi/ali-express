@@ -9,6 +9,6 @@ pages << {
     },
     display: {
         "width": 1920,
-        "height": 3080
+        "height": 3300
     }
 }

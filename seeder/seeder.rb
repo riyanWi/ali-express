@@ -6,5 +6,9 @@ pages << {
     url: "https://www.aliexpress.com/category/100003109/women-clothing.html",
     vars: {
         category: "Women's clothing"
+    },
+    display: {
+        "width": 1920,
+        "height": 3080
     }
 }
